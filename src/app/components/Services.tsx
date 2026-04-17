@@ -30,7 +30,7 @@ const services = [
     icon: <Shield size={28} />,
     title: 'Brand Identity',
     image: '/Brand-Identity.jpg',
-    desc: 'Distinctive visual identities — logos, type systems, color palettes — that make you unforgettable.',
+    desc: 'Distinctive visual identities - logos, type systems, color palettes, that make you unforgettable.',
     tags: ['Logo Design', 'Style Guide', 'Motion'],
     color: '#F59E0B',
   },
@@ -46,7 +46,7 @@ const services = [
     icon: <Zap size={28} />,
     title: 'AI Integration',
     image: '/AI-Integration.jpg',
-    desc: 'Supercharge your product with bespoke AI features — chatbots, recommendations, automation.',
+    desc: 'Supercharge your product with bespoke AI features - chatbots, recommendations, automation.',
     tags: ['LLMs', 'Automation', 'APIs'],
     color: '#F472B6',
   },
@@ -67,7 +67,7 @@ export default function Services() {
             <span className="gradient-text-teal">dominate online</span>
           </h2>
           <p style={{ color: '#94A3B8', fontSize: '17px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
-            From concept to launch — we cover every layer of your digital presence.
+            From concept to launch we cover every layer of your digital presence.
           </p>
         </div>
 

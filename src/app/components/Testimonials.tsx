@@ -3,7 +3,7 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Oasis didn't just build our app — they elevated our entire vision. The attention to detail and proactive communication was unlike any agency we'd worked with before.",
+    quote: "Oasis didn't just build our app - they elevated our entire vision. The attention to detail and proactive communication was unlike any agency we'd worked with before.",
     name: 'Chloe Bernstein',
     role: 'CEO, NovaPulse',
     avatar: '🌟',

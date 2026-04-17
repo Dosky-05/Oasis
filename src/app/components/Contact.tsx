@@ -79,8 +79,8 @@ export default function Contact() {
 
             {[
               { icon: <Mail size={18} />, label: 'Email', value: 'hello@oasis.agency', color: '#00D4AA' },
-              { icon: <MessageCircle size={18} />, label: 'WhatsApp', value: '+1 (555) 000-0000', color: '#00A8FF' },
-              { icon: <MapPin size={18} />, label: 'Based in', value: 'Remote — Worldwide', color: '#A78BFA' },
+              { icon: <MessageCircle size={18} />, label: 'WhatsApp', value: '+234 (816) 605-9298', color: '#00A8FF' },
+              { icon: <MapPin size={18} />, label: 'Based in', value: 'Remote - Worldwide', color: '#A78BFA' },
               { icon: <Clock size={18} />, label: 'Response time', value: '< 24 hours', color: '#F59E0B' },
             ].map(item => (
               <div key={item.label} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', marginBottom: '20px' }}>

@@ -68,7 +68,7 @@ export default function Pricing() {
             <span className="gradient-text">zero surprises</span>
           </h2>
           <p style={{ color: '#94A3B8', fontSize: '17px', maxWidth: '500px', margin: '0 auto 20px', lineHeight: 1.7 }}>
-            Every project is unique — but here's a guide to get you oriented.
+            Every project is unique - but here's a guide to get you oriented.
           </p>
         </div>
 

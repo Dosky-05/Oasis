@@ -60,7 +60,7 @@ export default function Hero() {
             maxWidth: '560px',
             margin: '0 auto 44px',
           }}>
-            We craft premium digital experiences — from blazing-fast web apps and mobile products
+            We craft premium digital experiences from blazing-fast web apps and mobile products
             to stunning brand identities that leave your audience in awe.
           </p>
 

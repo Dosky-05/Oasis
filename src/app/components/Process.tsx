@@ -44,7 +44,7 @@ export default function Process() {
             <div className="section-tag" style={{ margin: '0 auto 20px', position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', width: 'fit-content' }}>How We Work</div>
             From idea to{' '}
             <span className="gradient-text-teal">launch</span>
-            {' '}— in 4 steps
+            {' '}- in 4 steps
           </h2>
           <p style={{ color: '#94A3B8', fontSize: '17px', maxWidth: '500px', margin: '0 auto 20px', lineHeight: 1.7 }}>
             Our proven process delivers results on time, on budget, and beyond expectations.
