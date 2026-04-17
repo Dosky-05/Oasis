@@ -79,7 +79,7 @@ export default function Contact() {
 
             {[
               { icon: <Mail size={18} />, label: 'Email', value: 'hello@oasis.agency', color: '#00D4AA' },
-              { icon: <MessageCircle size={18} />, label: 'WhatsApp', value: '+234 (816) 605-9298', color: '#00A8FF' },
+              { icon: <MessageCircle size={18} />, label: 'WhatsApp', value: '+234 (816) 605-9298', color: '#00A8FF', href: 'https://wa.me/2348166059298' },
               { icon: <MapPin size={18} />, label: 'Based in', value: 'Remote - Worldwide', color: '#A78BFA' },
               { icon: <Clock size={18} />, label: 'Response time', value: '< 24 hours', color: '#F59E0B' },
             ].map(item => (
@@ -95,7 +95,16 @@ export default function Contact() {
                 </div>
                 <div>
                   <div style={{ fontSize: '12px', color: '#94A3B8', fontWeight: 500, marginBottom: '2px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{item.label}</div>
-                  <div style={{ fontSize: '15px', color: '#F1F5F9', fontWeight: 500 }}>{item.value}</div>
+                 <div style={{ fontSize: '15px', color: '#F1F5F9', fontWeight: 500 }}>
+                    {'href' in item ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ color: '#F1F5F9', textDecoration: 'none' }}
+                        onMouseEnter={e => e.currentTarget.style.color = '#00A8FF'}
+                        onMouseLeave={e => e.currentTarget.style.color = '#F1F5F9'}
+                      >
+                        {item.value}
+                      </a>
+                    ) : item.value}
+                  </div>
                 </div>
               </div>
             ))}
