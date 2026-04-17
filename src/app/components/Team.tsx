@@ -14,7 +14,7 @@ const team = [
   {
     name: 'Priya Sharma',
     role: 'Lead UI/UX Designer',
-    image: '/team-1.png',
+    image: '/Priya.jpg',
     bio: 'Obsessed with turning user pain into elegant, delightful digital journeys.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#00A8FF',
@@ -22,7 +22,7 @@ const team = [
   {
     name: 'Marcus Holt',
     role: 'Mobile Engineer',
-    image: '/team-1.png',
+    image: '/Marcus-Holt.jpg',
     bio: 'Cross-platform mobile wizard. React Native specialist with 50+ apps shipped.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#A78BFA',
@@ -30,7 +30,7 @@ const team = [
   {
     name: 'Sofia Reyes',
     role: 'Brand & Growth Strategist',
-    image: '/team-1.png',
+    image: '/Sofia-Reyes.jpg',
     bio: 'Data-driven storyteller who builds brands that people remember and businesses that grow.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#F59E0B',
