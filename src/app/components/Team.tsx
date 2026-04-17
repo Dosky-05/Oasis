@@ -14,7 +14,7 @@ const team = [
   {
     name: 'Priya Sharma',
     role: 'Lead UI/UX Designer',
-    image: '/Priya.jpg',
+    image: '/prom.jpg',
     bio: 'Obsessed with turning user pain into elegant, delightful digital journeys.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#00A8FF',
