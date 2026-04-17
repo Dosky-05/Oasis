@@ -26,18 +26,13 @@ export default function Footer() {
         }} className="footer-grid">
           {/* Brand col */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-              <div style={{
-                width: '36px', height: '36px',
-                background: 'linear-gradient(135deg, #00D4AA, #00A8FF)',
-                borderRadius: '10px',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                boxShadow: '0 0 16px rgba(0,212,170,0.3)',
-              }}>
-                <span style={{ color: '#fff', fontFamily: 'Outfit', fontWeight: 800, fontSize: '18px' }}>O</span>
-              </div>
-              <span style={{ fontFamily: 'Outfit', fontWeight: 700, fontSize: '22px', color: '#F1F5F9' }}>Oasis</span>
-            </div>
+          <div style={{ marginBottom: '20px' }}>
+            <img
+              src="/Logo.png"
+              alt="Oasis"
+              style={{ height: '40px', width: 'auto' }}
+            />
+          </div>
 
             <p style={{ color: '#64748B', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px', maxWidth: '260px' }}>
               Where digital vision meets execution. Building products that scale and brands that endure.

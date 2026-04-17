@@ -256,10 +256,11 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Logo */}
           <a href="/" className="navbar-logo">
-            <div className="navbar-logo-icon">
-              <span style={{ color: '#fff', fontFamily: 'Outfit', fontWeight: 800, fontSize: '18px' }}>O</span>
-            </div>
-            <span className="navbar-logo-text">Oasis</span>
+            <img 
+              src="/Logo.png" 
+              alt="Oasis" 
+              style={{ height: '36px', width: 'auto' }}
+            />
           </a>
 
           {/* Desktop Navigation */}
