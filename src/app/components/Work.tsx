@@ -4,20 +4,20 @@ import { ExternalLink, Tag } from 'lucide-react';
 
 const projects = [
   {
-    image: '/portfolio-web.png',
-    tag: 'SaaS Dashboard',
-    title: 'NovaPulse Analytics',
-    desc: 'End-to-end SaaS dashboard with real-time data visualization, dark-mode-first design, and blazing performance.',
-    tech: ['Next.js', 'TypeScript', 'PostgreSQL'],
-    color: '#00D4AA',
+    image: '/Studyapp.png',
+    tag: 'AI Integration',
+    title: 'StudyForge',
+    desc: 'An AI-powered study assistant that helps students learn smarter, generating study plans, quizzes and summaries.',
+    tech: ['React.js', 'Tailwind CSS', 'PostgreSQL'],
+    color: '#F472B6',
   },
   {
-    image: '/portfolio-mobile.png',
-    tag: 'Mobile App',
-    title: 'FlowPay Fintech',
-    desc: 'Award-winning fintech app used by 80K+ users - seamless payments, smart budgeting, and beautiful onboarding.',
-    tech: ['React Native', 'Stripe', 'Firebase'],
-    color: '#00A8FF',
+    image: '/caraapp.png',
+    tag: 'Web Development',
+    title: 'CaraStore',
+    desc: 'A full-featured clothing brand e-commerce site with product pages, cart functionality, and a polished multi-page layout..',
+    tech: ['React.js', 'Tailwind CSS', 'Node.js'],
+    color: '#00D4AA',
   },
   {
     image: '/portfolio-brand.png',

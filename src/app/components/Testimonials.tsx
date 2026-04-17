@@ -5,18 +5,18 @@ const testimonials = [
   {
     quote: "Oasis didn't just build our app - they elevated our entire vision. The attention to detail and proactive communication was unlike any agency we'd worked with before.",
     name: 'Chloe Bernstein',
-    role: 'CEO, NovaPulse',
+    role: 'Founder, StudyForge',
     avatar: '🌟',
     rating: 5,
-    color: '#00D4AA',
+    color: '#F472B6',
   },
   {
     quote: "We went from a rough idea to a polished, live product in 6 weeks. The team at Oasis is sharp, creative, and genuinely cares about your success.",
     name: 'David Okonkwo',
-    role: 'Co-Founder, FlowPay',
+    role: 'CEO, CaraStore',
     avatar: '🚀',
     rating: 5,
-    color: '#00A8FF',
+    color: '#00D4AA',
   },
   {
     quote: "The brand identity they created for us is stunning. We've gotten more compliments on our visual identity in 3 months than in the 3 years prior.",
