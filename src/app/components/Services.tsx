@@ -5,7 +5,7 @@ const services = [
   {
     icon: <Globe size={28} />,
     title: 'Web Development',
-    image: '/web-Development.jpg',
+    image: '/Web-Development.jpg',
     desc: 'High-performance websites and web apps built with Next.js, React, and modern stacks that scale.',
     tags: ['Next.js', 'React', 'Node.js'],
     color: '#00D4AA',
@@ -13,7 +13,7 @@ const services = [
  {
     icon: <Smartphone size={28} />,
     title: 'Mobile Apps',
-    image: '/mobile-Apps.jpg',
+    image: '/Mobile-Apps.jpg',
     desc: 'Native and cross-platform mobile experiences for iOS & Android that users love to open.',
     tags: ['React Native', 'iOS', 'Android'],
     color: '#00A8FF',
