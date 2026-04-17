@@ -93,7 +93,6 @@ export default function Services() {
                backgroundImage: `url(${service.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundAttachment: 'fixed',
               }}
             >
               {/* Dark overlay */}
