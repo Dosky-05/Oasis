@@ -144,6 +144,9 @@ export default function Process() {
             grid-template-columns: 1fr !important;
             gap: 48px 0 !important;
           }
+          .process-arrows {
+            display: none !important;
+          }
         }
       `}</style>
     </section>

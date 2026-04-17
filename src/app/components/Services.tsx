@@ -5,13 +5,15 @@ const services = [
   {
     icon: <Globe size={28} />,
     title: 'Web Development',
+    image: '/web-Development.jpg',
     desc: 'High-performance websites and web apps built with Next.js, React, and modern stacks that scale.',
     tags: ['Next.js', 'React', 'Node.js'],
     color: '#00D4AA',
   },
-  {
+ {
     icon: <Smartphone size={28} />,
     title: 'Mobile Apps',
+    image: '/mobile-Apps.jpg',
     desc: 'Native and cross-platform mobile experiences for iOS & Android that users love to open.',
     tags: ['React Native', 'iOS', 'Android'],
     color: '#00A8FF',
@@ -19,6 +21,7 @@ const services = [
   {
     icon: <Palette size={28} />,
     title: 'UI/UX Design',
+    image: '/UI-UX-Design.jpg',
     desc: 'Intuitive, beautiful interfaces crafted to convert visitors into loyal customers.',
     tags: ['Figma', 'Prototyping', 'Design Systems'],
     color: '#A78BFA',
@@ -26,20 +29,23 @@ const services = [
   {
     icon: <Shield size={28} />,
     title: 'Brand Identity',
+    image: '/Brand-Identity.jpg',
     desc: 'Distinctive visual identities — logos, type systems, color palettes — that make you unforgettable.',
     tags: ['Logo Design', 'Style Guide', 'Motion'],
     color: '#F59E0B',
   },
-  {
+   {
     icon: <TrendingUp size={28} />,
     title: 'SEO & Growth',
+    image: '/SEO-Growth.jpg',
     desc: 'Data-driven strategies that put you at the top of search results and drive compounding traffic.',
     tags: ['SEO', 'Analytics', 'CRO'],
     color: '#34D399',
   },
-  {
+ {
     icon: <Zap size={28} />,
     title: 'AI Integration',
+    image: '/AI-Integration.jpg',
     desc: 'Supercharge your product with bespoke AI features — chatbots, recommendations, automation.',
     tags: ['LLMs', 'Automation', 'APIs'],
     color: '#F472B6',
@@ -84,8 +90,19 @@ export default function Services() {
                 overflow: 'hidden',
                 flex: '1 1 280px',
                 maxWidth: '380px',
+               backgroundImage: `url(${service.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed',
               }}
             >
+              {/* Dark overlay */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(135deg, rgba(10,15,30,0.92) 0%, rgba(10,15,30,0.75) 100%)',
+                zIndex: 1,
+              }} />
               {/* Subtle accent line */}
               <div style={{
                 position: 'absolute',
@@ -93,6 +110,7 @@ export default function Services() {
                 height: '2px',
                 background: `linear-gradient(90deg, ${service.color}60, transparent)`,
                 opacity: 0.8,
+                zIndex: 2,
               }} />
 
               {/* Icon */}
@@ -104,19 +122,21 @@ export default function Services() {
                 color: service.color,
                 marginBottom: '20px',
                 border: `1px solid ${service.color}25`,
+                position: 'relative',
+                zIndex: 2,
               }}>
                 {service.icon}
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '12px', color: '#F1F5F9' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '12px', color: '#F1F5F9', position: 'relative', zIndex: 2 }}>
                 {service.title}
               </h3>
-              <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: 1.7, marginBottom: '24px' }}>
+              <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: 1.7, marginBottom: '24px', position: 'relative', zIndex: 2 }}>
                 {service.desc}
               </p>
 
               {/* Tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', position: 'relative', zIndex: 2 }}>
                 {service.tags.map(tag => (
                   <span key={tag} style={{
                     background: `${service.color}12`,
@@ -143,6 +163,7 @@ export default function Services() {
                 color: `${service.color}08`,
                 lineHeight: 1,
                 userSelect: 'none',
+                zIndex: 2,
               }}>
                 0{i + 1}
               </div>
