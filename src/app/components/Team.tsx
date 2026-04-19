@@ -4,18 +4,18 @@ import { Code2, Globe, Send } from 'lucide-react';
 
 const team = [
   {
-    name: 'Jordan Osei',
-    role: 'Founder & Full-Stack Engineer',
+    name: 'Joshua Ajisafe',
+    role: 'Founder & Backend Developer',
     image: '/team-1.png',
     bio: 'Architect of complex web systems. 8 years shipping products used by millions.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#00D4AA',
   },
   {
-    name: 'Priya Sharma',
-    role: 'Lead UI/UX Designer',
-    image: '/prom.jpg',
-    bio: 'Obsessed with turning user pain into elegant, delightful digital journeys.',
+    name: 'Modesireoluwa Adedokun',
+    role: 'Co-Founder & Frontend Developer',
+    image: '/Modesireoluwa (2).jpg',
+    bio: 'Engineering intuitive interfaces where clean code meets human-centered design.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#00A8FF',
   },
