@@ -6,8 +6,8 @@ const team = [
   {
     name: 'Joshua Ajisafe',
     role: 'Founder & Backend Developer',
-    image: '/team-1.png',
-    bio: 'Architect of complex web systems. 8 years shipping products used by millions.',
+    image: '/Joshua.jpg',
+    bio: 'Designing scalable server architectures that power products built for millions.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#00D4AA',
   },
