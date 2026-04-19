@@ -11,23 +11,23 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          name: formData.name,
-          email: formData.email,
-          project: formData.project,
-          budget: formData.budget,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      setSubmitted(true);
-    } catch (error) {
-  alert('Something went wrong. Please try again.');
-    }
-  };
+    await emailjs.send(
+      "service_68fo1fl",
+      "template_cxgzu5c",
+      {
+        name: formData.name,
+        email: formData.email,
+        project: formData.project,
+        budget: formData.budget,
+        message: formData.message,
+      },
+      "eHzQRPWSqYycwQkaA"
+    );
+    setSubmitted(true);
+  } catch (error) {
+    alert('Something went wrong. Please try again.');
+  }
+};
 
   const inputStyle = {
     width: '100%',
