@@ -1,14 +1,32 @@
 'use client';
 import { useState } from 'react';
 import { Mail, ArrowRight, MessageCircle, MapPin, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', project: '', budget: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: formData.name,
+          email: formData.email,
+          project: formData.project,
+          budget: formData.budget,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setSubmitted(true);
+    } catch (error) {
+  alert('Something went wrong. Please try again.');
+    }
   };
 
   const inputStyle = {
@@ -51,7 +69,7 @@ export default function Contact() {
             <a href="mailto:hello@oasis.agency">
               <button className="btn-primary" id="cta-email-btn" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '16px' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Mail size={18} /> hello@oasis.agency
+                  <Mail size={18} /> oasiscodes07@gmail.com
                 </span>
               </button>
             </a>
@@ -78,7 +96,7 @@ export default function Contact() {
             </p>
 
             {[
-              { icon: <Mail size={18} />, label: 'Email', value: 'hello@oasis.agency', color: '#00D4AA' },
+              { icon: <Mail size={18} />, label: 'Email', value: 'oasiscodes07@gmail.com', color: '#00D4AA' },
               { icon: <MessageCircle size={18} />, label: 'WhatsApp', value: '+234 (816) 605-9298', color: '#00A8FF', href: 'https://wa.me/2348166059298' },
               { icon: <MapPin size={18} />, label: 'Based in', value: 'Remote - Worldwide', color: '#A78BFA' },
               { icon: <Clock size={18} />, label: 'Response time', value: '< 24 hours', color: '#F59E0B' },
@@ -113,14 +131,24 @@ export default function Contact() {
           {/* Right form */}
           <div className="glass-card" style={{ padding: '40px', borderRadius: '20px' }}>
             {submitted ? (
-              <div style={{ textAlign: 'center', padding: '48px 0' }}>
+             <div style={{ textAlign: 'center', padding: '48px 0' }}>
                 <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎉</div>
                 <h4 style={{ fontSize: '24px', fontWeight: 700, color: '#F1F5F9', marginBottom: '12px' }}>
                   Message sent!
                 </h4>
-                <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: 1.7 }}>
+                <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: 1.7, marginBottom: '28px' }}>
                   We'll review your brief and get back to you within 24 hours.
                 </p>
+                <button
+                  className="btn-outline"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({ name: '', email: '', project: '', budget: '', message: '' });
+                  }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '15px' }}
+                >
+                  Send Another
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

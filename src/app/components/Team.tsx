@@ -20,9 +20,9 @@ const team = [
     color: '#00A8FF',
   },
   {
-    name: 'Marcus Holt',
+    name: 'Felix Bamidele',
     role: 'Mobile Engineer',
-    image: '/Marcus-Holt.jpg',
+    image: '/Bamidele.jpg',
     bio: 'Cross-platform mobile wizard. React Native specialist with 50+ apps shipped.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#A78BFA',
