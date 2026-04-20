@@ -106,7 +106,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="footer-bottom" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
           <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
-            Copyright {year} Oasis Agency. All rights reserved.
+            &copy; {year} Oasis Agency. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
