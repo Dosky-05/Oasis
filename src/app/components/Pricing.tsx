@@ -3,40 +3,7 @@ import { Check, Sparkles } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$1,500',
-    period: 'per project',
-    desc: 'Perfect for startups and small businesses ready to establish their digital presence.',
-    features: [
-      '5-page responsive website',
-      'Custom UI design',
-      'Mobile-first development',
-      'Basic SEO setup',
-      '2 revision rounds',
-      '30-day post-launch support',
-    ],
-    color: '#00D4AA',
-    popular: false,
-  },
-  {
-    name: 'Growth',
-    price: '$4,500',
-    period: 'per project',
-    desc: 'For scaling businesses that need a robust digital product and brand presence.',
-    features: [
-      'Full web app or e-commerce',
-      'UI/UX design system',
-      'CMS integration',
-      'Advanced SEO & analytics',
-      'Unlimited revisions',
-      '90-day post-launch support',
-      'Performance optimization',
-    ],
-    color: '#00A8FF',
-    popular: true,
-  },
-  {
-    name: 'Enterprise',
+    name: 'For Pricing',
     price: 'Custom',
     period: 'contact us',
     desc: 'End-to-end digital transformation for established businesses with complex needs.',

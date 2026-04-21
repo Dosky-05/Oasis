@@ -5,7 +5,7 @@ import { Code2, Globe, Send } from 'lucide-react';
 const team = [
   {
     name: 'Joshua Ajisafe',
-    role: 'Founder & Backend Developer',
+    role: 'Founder & Technical Diretor ',
     image: '/Ajisafe.jpg',
     bio: 'Designing scalable server architectures that power products built for millions.',
     socials: { site: '#', updates: '#', code: '#' },
@@ -26,14 +26,6 @@ const team = [
     bio: 'Cross-platform mobile wizard. React Native specialist with 50+ apps shipped.',
     socials: { site: '#', updates: '#', code: '#' },
     color: '#A78BFA',
-  },
-  {
-    name: 'Sofia Reyes',
-    role: 'Brand & Growth Strategist',
-    image: '/Sofia-Reyes.jpg',
-    bio: 'Data-driven storyteller who builds brands that people remember and businesses that grow.',
-    socials: { site: '#', updates: '#', code: '#' },
-    color: '#F59E0B',
   },
 ];
 
@@ -98,42 +90,6 @@ export default function Team() {
                 <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: 1.7, marginBottom: '20px' }}>
                   {member.bio}
                 </p>
-
-                {/* Socials */}
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
-                  {[
-                    { icon: <Globe size={16} />, href: member.socials.site, label: 'Website' },
-                    { icon: <Send size={16} />, href: member.socials.updates, label: 'Social' },
-                    { icon: <Code2 size={16} />, href: member.socials.code, label: 'Code' },
-                  ].map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      aria-label={social.label}
-                      style={{
-                        width: '36px', height: '36px',
-                        borderRadius: '50%',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        color: '#64748B',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = member.color;
-                        e.currentTarget.style.color = member.color;
-                        e.currentTarget.style.background = `${member.color}12`;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                        e.currentTarget.style.color = '#64748B';
-                        e.currentTarget.style.background = 'transparent';
-                      }}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
               </div>
             </div>
           ))}

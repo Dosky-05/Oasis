@@ -34,7 +34,7 @@ export default function Hero() {
           {/* Badge */}
           <div className="section-tag" style={{ margin: '0 auto 32px' }}>
             <Sparkles size={12} />
-            Digital Tech Freelance Agency
+            Digital Tech Agency
           </div>
 
           {/* Headline */}

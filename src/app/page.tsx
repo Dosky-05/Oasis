@@ -12,7 +12,7 @@ import Footer from '@/app/components/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Oasis — Digital Tech Freelance Agency',
+  title: 'Oasis — Digital Tech Agency',
   description: 'Oasis crafts premium digital experiences — web development, mobile apps, UI/UX design, and brand identity. Where digital vision meets execution.',
 };
 

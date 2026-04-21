@@ -15,17 +15,10 @@ const testimonials = [
     name: 'David Okonkwo',
     role: 'CEO, CaraStore',
     avatar: '🚀',
-    rating: 5,
+    rating: 4,
     color: '#00D4AA',
   },
-  {
-    quote: "The brand identity they created for us is stunning. We've gotten more compliments on our visual identity in 3 months than in the 3 years prior.",
-    name: 'Irina Volkov',
-    role: 'Marketing Director, Apex',
-    avatar: '✨',
-    rating: 5,
-    color: '#F59E0B',
-  },
+
 ];
 
 export default function Testimonials() {

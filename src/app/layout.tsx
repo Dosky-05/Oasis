@@ -8,12 +8,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Oasis - Digital Tech Freelance Agency",
-  description: "Oasis is a premier digital tech freelance agency specializing in web development, mobile apps, UI/UX design, and brand identity. Where digital vision meets execution.",
+  title: "Oasis - Digital Tech Agency",
+  description: "Oasis is a premier digital tech agency specializing in web development, mobile apps, UI/UX design, and brand identity. Where digital vision meets execution.",
   keywords: "web development, mobile apps, UI/UX design, brand identity, freelance agency, digital agency",
   openGraph: {
     title: "Oasis - Where Digital Vision Meets Execution",
-    description: "Premier digital tech freelance agency for web, mobile, and brand experiences.",
+    description: "Premier digital tech agency for web, mobile, and brand experiences.",
     type: "website",
   },
 };

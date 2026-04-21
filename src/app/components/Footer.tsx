@@ -1,9 +1,10 @@
 'use client';
 import { AtSign, Code2, Globe, Send } from 'lucide-react';
+import Link from 'next/link';
 
 const footerLinks = {
   Services: ['Web Development', 'Mobile Apps', 'UI/UX Design', 'Brand Identity', 'SEO & Growth', 'AI Integration'],
-  Company: ['About Us', 'Our Work', 'Meet the Team', 'Blog', 'Careers'],
+  Company: ['About Us', 'Our Work', 'Meet the Team'],
   Resources: ['Case Studies', 'Process', 'Pricing', 'FAQ', 'Contact'],
 };
 
@@ -38,42 +39,6 @@ export default function Footer() {
               Where digital vision meets execution. Building products that scale and brands that endure.
             </p>
 
-            {/* Socials */}
-            <div style={{ display: 'flex', gap: '10px' }}>
-              {[
-                { icon: <Globe size={16} />, href: '#', label: 'Website' },
-                { icon: <Send size={16} />, href: '#', label: 'Updates' },
-                { icon: <Code2 size={16} />, href: '#', label: 'Projects' },
-                { icon: <AtSign size={16} />, href: '#', label: 'Email' },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  style={{
-                    width: '38px', height: '38px',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: '#64748B',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(0,212,170,0.4)';
-                    e.currentTarget.style.color = '#00D4AA';
-                    e.currentTarget.style.background = 'rgba(0,212,170,0.08)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.currentTarget.style.color = '#64748B';
-                    e.currentTarget.style.background = 'transparent';
-                  }}
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Link cols */}
@@ -108,19 +73,6 @@ export default function Footer() {
           <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
             &copy; {year} Oasis Agency. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                style={{ color: '#475569', fontSize: '13px', textDecoration: 'none', transition: 'color 0.2s ease' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#00D4AA'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#475569'; }}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
 

@@ -1,31 +1,26 @@
 'use client';
 import Image from 'next/image';
 import { ExternalLink, Tag } from 'lucide-react';
+import Link from 'next/link';
 
 const projects = [
   {
     image: '/Studyapp.png',
     tag: 'AI Integration',
     title: 'StudyForge',
-    desc: 'An AI-powered study assistant that helps students learn smarter, generating study plans, quizzes and summaries.',
+    desc: 'An AI-powered study assistant...',
     tech: ['React.js', 'Tailwind CSS', 'PostgreSQL'],
     color: '#F472B6',
+    link: 'https://study-forge-chi.vercel.app/', 
   },
-  {
+ {
     image: '/caraapp.png',
     tag: 'Web Development',
     title: 'CaraStore',
-    desc: 'A full-featured clothing brand e-commerce site with product pages, cart functionality, and a polished multi-page layout..',
+    desc: 'A full-featured clothing brand...',
     tech: ['React.js', 'Tailwind CSS', 'Node.js'],
     color: '#00D4AA',
-  },
-  {
-    image: '/portfolio-brand.png',
-    tag: 'Brand Identity',
-    title: 'Apex Brand System',
-    desc: 'Complete visual identity for a Series-A tech startup - logo, motion, style guide, and component library.',
-    tech: ['Figma', 'After Effects', 'Design System'],
-    color: '#F59E0B',
+    link: 'https://cara-store-pi.vercel.app/',
   },
 ];
 
@@ -134,49 +129,63 @@ export default function Work() {
                   ))}
                 </div>
 
-                <button style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: 'transparent',
+               <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                <span
+                  className="case-btn"
+                                style={{
                   border: `1px solid ${project.color}`,
                   color: project.color,
-                  padding: '10px 22px',
-                  borderRadius: '50px',
-                  fontFamily: 'Outfit',
-                  fontWeight: 600,
-                  fontSize: '14px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  width: 'fit-content',
-                }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = `${project.color}15`;
-                    e.currentTarget.style.boxShadow = `0 0 20px ${project.color}30`;
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
+                  '--hover-color': project.color,
+                } as React.CSSProperties}
                 >
                   View Case Study <ExternalLink size={14} />
-                </button>
+                </span>
+              </Link>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .project-row {
-            grid-template-columns: 1fr !important;
+            <style>{`
+          @media (max-width: 768px) {
+            .project-row {
+              grid-template-columns: 1fr !important;
+            }
+            .project-row > div {
+              order: 0 !important;
+            }
           }
-          .project-row > div {
-            order: 0 !important;
+
+          /* ✅ Case Study Button */
+          .case-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-family: 'Outfit';
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+            position: relative;
           }
-        }
-      `}</style>
+
+          /* 🔥 Hover effect */
+          .case-btn:hover {
+            background: color-mix(in srgb, var(--hover-color) 15%, transparent);
+            box-shadow: 0 0 20px var(--hover-color);
+            transform: translateY(-2px);
+          }
+
+          /* ⚡ Click feedback */
+          .case-btn:active {
+            transform: scale(0.96);
+          }
+        `}</style>
     </section>
   );
 }
