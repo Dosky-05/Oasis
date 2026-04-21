@@ -1,11 +1,27 @@
 'use client';
 import { AtSign, Code2, Globe, Send } from 'lucide-react';
-import Link from 'next/link';
 
 const footerLinks = {
-  Services: ['Web Development', 'Mobile Apps', 'UI/UX Design', 'Brand Identity', 'SEO & Growth', 'AI Integration'],
-  Company: ['About Us', 'Our Work', 'Meet the Team'],
-  Resources: ['Case Studies', 'Process', 'Pricing', 'FAQ', 'Contact'],
+  Services: [
+    { label: 'Web Development', href: '#services' },
+    { label: 'Mobile Apps', href: '#services' },
+    { label: 'UI/UX Design', href: '#services' },
+    { label: 'Brand Identity', href: '#services' },
+    { label: 'SEO & Growth', href: '#services' },
+    { label: 'AI Integration', href: '#services' },
+  ],
+  Company: [
+    { label: 'About Us', href: '#hero' },
+    { label: 'Our Work', href: '#work' },
+    { label: 'Meet the Team', href: '#team' },
+  ],
+  Resources: [
+    { label: 'Case Studies', href: '#work' },
+    { label: 'Process', href: '#process' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Contact', href: '#contact' },
+  ],
 };
 
 export default function Footer() {
@@ -27,36 +43,51 @@ export default function Footer() {
         }} className="footer-grid">
           {/* Brand col */}
           <div>
-          <div style={{ marginBottom: '20px' }}>
-            <img
-              src="/Logo.png"
-              alt="Oasis"
-              style={{ height: '40px', width: 'auto' }}
-            />
-          </div>
+            <div style={{ marginBottom: '20px' }}>
+              <img
+                src="/Logo.png"
+                alt="Oasis"
+                style={{ height: '40px', width: 'auto' }}
+              />
+            </div>
 
             <p style={{ color: '#64748B', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px', maxWidth: '260px' }}>
               Where digital vision meets execution. Building products that scale and brands that endure.
             </p>
-
           </div>
 
           {/* Link cols */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h6 style={{ fontFamily: 'Outfit', fontWeight: 700, fontSize: '13px', color: '#F1F5F9', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '20px' }}>
+              <h6 style={{
+                fontFamily: 'Outfit',
+                fontWeight: 700,
+                fontSize: '13px',
+                color: '#F1F5F9',
+                textTransform: 'uppercase',
+                letterSpacing: '1.5px',
+                marginBottom: '20px'
+              }}>
                 {category}
               </h6>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
-                      style={{ color: '#64748B', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: '4px' }}
+                      href={link.href}
+                      style={{
+                        color: '#64748B',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        transition: 'color 0.2s ease',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
+                      }}
                       onMouseEnter={(e) => { e.currentTarget.style.color = '#00D4AA'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = '#64748B'; }}
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -69,7 +100,13 @@ export default function Footer() {
         <div className="divider" style={{ marginBottom: '28px' }} />
 
         {/* Bottom bar */}
-        <div className="footer-bottom" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '16px' }}>
+        <div className="footer-bottom" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '16px'
+        }}>
           <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
             &copy; {year} Oasis Agency. All rights reserved.
           </p>

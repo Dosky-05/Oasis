@@ -21,22 +21,40 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <section id="hero">
+          <Hero />
+        </section>
         <div className="divider" />
-        <Services />
+        <section id="services">
+          <Services />
+        </section>
         <div className="divider" />
-        <Work />
+        <section id="work">
+          <Work />
+        </section>
         <div className="divider" />
-        <Process />
+        <section id="process">
+          <Process />
+        </section>
         <div className="divider" />
-        <Team />
+        <section id="team">
+          <Team />
+        </section>
         <div className="divider" />
-        <Testimonials />
+        <section id="testimonials">
+          <Testimonials />
+        </section>
         <div className="divider" />
-        <Pricing />
+        <section id="pricing">
+          <Pricing />
+        </section>
         <div className="divider" />
-        <FAQ />
-        <Contact />
+        <section id="faq">
+          <FAQ />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
       <Footer />
     </>
