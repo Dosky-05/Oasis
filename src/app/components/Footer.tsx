@@ -1,5 +1,6 @@
 'use client';
 import { AtSign, Code2, Globe, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const footerLinks = {
   Services: [
@@ -28,12 +29,19 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer style={{
-      background: '#060B18',
-      borderTop: '1px solid rgba(255,255,255,0.06)',
-      padding: '72px 0 32px',
-    }}>
+    <motion.footer
+      style={{
+        background: '#060B18',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        padding: '72px 0 32px',
+      }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+    >
       <div className="section-container">
+
         {/* Top row */}
         <div style={{
           display: 'grid',
@@ -41,8 +49,14 @@ export default function Footer() {
           gap: '48px',
           marginBottom: '64px',
         }} className="footer-grid">
+
           {/* Brand col */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+          >
             <div style={{ marginBottom: '20px' }}>
               <img
                 src="/Logo.png"
@@ -50,15 +64,30 @@ export default function Footer() {
                 style={{ height: '40px', width: 'auto' }}
               />
             </div>
-
-            <p style={{ color: '#64748B', fontSize: '15px', lineHeight: 1.7, marginBottom: '28px', maxWidth: '260px' }}>
+            <p style={{
+              color: '#64748B',
+              fontSize: '15px',
+              lineHeight: 1.7,
+              marginBottom: '28px',
+              maxWidth: '260px',
+            }}>
               Where digital vision meets execution. Building products that scale and brands that endure.
             </p>
-          </div>
+          </motion.div>
 
           {/* Link cols */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(footerLinks).map(([category, links], colIndex) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2 + colIndex * 0.1,
+                ease: 'easeOut',
+              }}
+            >
               <h6 style={{
                 fontFamily: 'Outfit',
                 fontWeight: 700,
@@ -66,7 +95,7 @@ export default function Footer() {
                 color: '#F1F5F9',
                 textTransform: 'uppercase',
                 letterSpacing: '1.5px',
-                marginBottom: '20px'
+                marginBottom: '20px',
               }}>
                 {category}
               </h6>
@@ -82,7 +111,7 @@ export default function Footer() {
                         transition: 'color 0.2s ease',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '4px'
+                        gap: '4px',
                       }}
                       onMouseEnter={(e) => { e.currentTarget.style.color = '#00D4AA'; }}
                       onMouseLeave={(e) => { e.currentTarget.style.color = '#64748B'; }}
@@ -92,25 +121,40 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Divider */}
-        <div className="divider" style={{ marginBottom: '28px' }} />
+        {/* Divider — wipe in */}
+        <motion.div
+          className="divider"
+          style={{ marginBottom: '28px' }}
+          initial={{ scaleX: 0, originX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+        />
 
         {/* Bottom bar */}
-        <div className="footer-bottom" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '16px'
-        }}>
+        <motion.div
+          className="footer-bottom"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '16px',
+          }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.45, ease: 'easeOut' }}
+        >
           <p style={{ color: '#475569', fontSize: '14px', margin: 0 }}>
             &copy; {year} Oasis Agency. All rights reserved.
           </p>
-        </div>
+        </motion.div>
+
       </div>
 
       <style>{`
@@ -127,6 +171,6 @@ export default function Footer() {
           }
         }
       `}</style>
-    </footer>
+    </motion.footer>
   );
 }

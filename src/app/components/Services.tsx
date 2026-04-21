@@ -1,5 +1,6 @@
 'use client';
 import { Globe, Smartphone, Palette, TrendingUp, Zap, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -10,7 +11,7 @@ const services = [
     tags: ['Next.js', 'React', 'Node.js'],
     color: '#00D4AA',
   },
- {
+  {
     icon: <Smartphone size={28} />,
     title: 'Mobile Apps',
     image: '/Mobile-Apps.jpg',
@@ -34,7 +35,7 @@ const services = [
     tags: ['Logo Design', 'Style Guide', 'Motion'],
     color: '#F59E0B',
   },
-   {
+  {
     icon: <TrendingUp size={28} />,
     title: 'SEO & Growth',
     image: '/SEO-Growth.jpg',
@@ -42,7 +43,7 @@ const services = [
     tags: ['SEO', 'Analytics', 'CRO'],
     color: '#34D399',
   },
- {
+  {
     icon: <Zap size={28} />,
     title: 'AI Integration',
     image: '/AI-Integration.jpg',
@@ -52,6 +53,30 @@ const services = [
   },
 ];
 
+// Container stagger — children animate in sequence
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+// Each card fades up + slight scale
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1] as const,
+    },
+  },
+};
+
 export default function Services() {
   return (
     <section id="services" style={{ padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
@@ -59,40 +84,77 @@ export default function Services() {
       <div className="orb orb-blue" style={{ width: '500px', height: '500px', right: '-100px', top: '0', position: 'absolute' }} />
 
       <div className="section-container">
+
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px', position: 'relative' }}>
-          <h2 style={{ fontSize: 'clamp(32px, 5vw, 54px)', fontWeight: 800, marginBottom: '8px', letterSpacing: '-1px', position: 'relative', paddingTop: '40px' }}>
-            <div className="section-tag" style={{ margin: '0 auto 20px', position: 'absolute', top: '0', left: '50%', transform: 'translateX(-50%)', width: 'fit-content' }}>Our Services</div>
+        <motion.div
+          style={{ textAlign: 'center', marginBottom: '64px', position: 'relative' }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <h2 style={{
+            fontSize: 'clamp(32px, 5vw, 54px)',
+            fontWeight: 800,
+            marginBottom: '8px',
+            letterSpacing: '-1px',
+            position: 'relative',
+            paddingTop: '40px',
+          }}>
+            <div className="section-tag" style={{
+              margin: '0 auto 20px',
+              position: 'absolute',
+              top: '0',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: 'fit-content',
+            }}>
+              Our Services
+            </div>
             Everything you need to{' '}
             <span className="gradient-text-teal">dominate online</span>
           </h2>
           <p style={{ color: '#94A3B8', fontSize: '17px', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
             From concept to launch we cover every layer of your digital presence.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Grid */}
-        <div style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '24px',
-          position: 'relative',
-          zIndex: 1,
-        }} className="services-scroll">
+        {/* Grid — staggered cards */}
+        <motion.div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '24px',
+            position: 'relative',
+            zIndex: 1,
+          }}
+          className="services-scroll"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+        >
           {services.map((service, i) => (
-            <div
+            <motion.div
               key={service.title}
               className="glass-card"
-              style={{ 
-                padding: '32px', 
-                position: 'relative', 
+              style={{
+                padding: '32px',
+                position: 'relative',
                 overflow: 'hidden',
                 flex: '1 1 280px',
                 maxWidth: '380px',
-               backgroundImage: `url(${service.image})`,
+                backgroundImage: `url(${service.image})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
+                cursor: 'default',
+              }}
+              variants={cardVariants}
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.3, ease: 'easeOut' },
               }}
             >
               {/* Dark overlay */}
@@ -102,7 +164,8 @@ export default function Services() {
                 background: 'linear-gradient(135deg, rgba(10,15,30,0.92) 0%, rgba(10,15,30,0.75) 100%)',
                 zIndex: 1,
               }} />
-              {/* Subtle accent line */}
+
+              {/* Accent line */}
               <div style={{
                 position: 'absolute',
                 top: 0, left: 0, right: 0,
@@ -166,9 +229,10 @@ export default function Services() {
               }}>
                 0{i + 1}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
